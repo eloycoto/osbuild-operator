@@ -59,6 +59,11 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
+        - name: BASE_ISO_CONTAINER_IMAGE
+          valueFrom:
+            resourceFieldRef:
+              containerName: manager
+              resource: image
         - name: CA_ISSUER_NAME
           # CA_ISSUER_NAME will be substituted by kustomize.
           value: $(CA_ISSUER_NAME)
